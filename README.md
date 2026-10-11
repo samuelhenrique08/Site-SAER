@@ -14,7 +14,7 @@ Este site foi criado para centralizar informações sobre a unidade: frota, fun�
 
 ## 🌐 Acesse
 
-🔗 **[saer.vercel.app](https://saer.vercel.app)** *(substituir pelo link real após o deploy)*
+🔗 **[samuelhenrique08.github.io/Site-SAER/](https://samuelhenrique08.github.io/Site-SAER/)**
 
 ---
 
@@ -117,8 +117,7 @@ Depois acesse **http://localhost:5500** no navegador.
 
 O site está hospedado em:
 
-- **Vercel** — [saer.vercel.app](https://saer.vercel.app)
-- **GitHub Pages** *(alternativa)* — `scotthzx.github.io/saer`
+- **GitHub Pages** — `samuelhenrique08.github.io/Site-SAER/`
 
 ### Como fazer deploy no Vercel
 
@@ -185,9 +184,9 @@ Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) par
 
 ## 📞 Contato
 
-- **Discord**: [Servidor do SAER](https://discord.com/channels/1052430488205283449/1271597439274713162)
+- **Discord**: [Servidor do SAER]()
 - **Instagram**: [@saer.pcerj](#)
-- **GitHub**: [@scotthzx](https://github.com/scotthzx)
+- **GitHub**: [@samuelhenrique08](https://github.com/samuelhenrique08)
 
 ---
 
