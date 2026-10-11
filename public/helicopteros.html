@@ -1,251 +1,406 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAER - Helicópteros</title>
-    <link rel="stylesheet" href="../style/helicopteros.css">
-    <link rel="icon" type="image/x-icon" href="../image/SaerLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../image/SaerLogo.png" alt="Logo SAER" class="logo1">
-        </a>
+    <meta name="description"
+        content="Frota de helicópteros do SAER - Phoenix, Pelicano e Raptor. Conheça as aeronaves do Serviço Aeropolicial.">
+    <meta name="theme-color" content="#0a0a0a">
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="helicopteros.html" class="ativo">Helicópteros</a></li>
-                <li><a href="galeria.html">Fotos</a></li>
-                <li><a href="funcoes.html">Funções</a></li>
-                <li><a href="tutoriais.html">Tutoriais</a></li>
-                <li><a href="regras.html">Regras</a></li>
-                <li><a href="memorial.html">Memorial</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main class="main">
-        <div class="main-content">
-            <h1>Helicópteros</h1>
-            <p>Frota de Aeronaves do Serviço Aeropolicial</p>
+    <meta property="og:title" content="Helicópteros - SAER">
+    <meta property="og:description" content="Conheça a frota de aeronaves do Serviço Aeropolicial.">
+    <meta property="og:image" content="../image/SaerLogo.png">
+    <meta property="og:type" content="website">
+
+    <title>Helicópteros - SAER</title>
+
+    <link rel="icon" type="image/png" href="../image/SaerLogo.png">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS: base compartilhado + específico da página -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/helicopteros.css">
+
+    <script defer src="../script/app5.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo" aria-label="SAER - Página inicial">
+                <img src="../image/SaerLogo.png" alt="" width="48" height="48">
+                <span class="logo-texto">SAER</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="helicopteros.html" class="ativo" aria-current="page">Helicópteros</a></li>
+                    <li><a href="galeria.html">Fotos</a></li>
+                    <li><a href="funcoes.html">Funções</a></li>
+                    <li><a href="tutoriais.html">Tutoriais</a></li>
+                    <li><a href="regras.html">Regras</a></li>
+                    <li><a href="memorial.html">Memorial</a></li>
+                </ul>
+            </nav>
         </div>
-    </main>
-    
-    <section class="helicopteros-sec">
-        <!-- Card Phoenix -->
-        <div class="heli-card phoenix">
-            <div class="heli-card-inner">
+    </header>
+
+    <main>
+
+        <!-- ==================== TÍTULO DA PÁGINA ==================== -->
+        <section class="page-header" aria-labelledby="page-titulo">
+            <span class="hero-tag">Frota SAER</span>
+            <h1 id="page-titulo">Helicópteros</h1>
+            <p>Frota de aeronaves do Serviço Aeropolicial</p>
+        </section>
+
+        <!-- ==================== GRID DE HELICÓPTEROS ==================== -->
+        <section class="helicopteros-sec" aria-label="Lista de helicópteros">
+
+            <!-- Phoenix -->
+            <article class="heli-card" data-cat="principal">
                 <div class="heli-imagem">
-                    <img src="../image/as350.png" alt="AS350 Phoenix">
-                    <div class="heli-tag">Principal</div>
+                    <img src="../image/as350.png" alt="Helicóptero Phoenix AS350" loading="lazy">
+                    <span class="heli-tag tag-principal">Principal</span>
                 </div>
                 <div class="heli-info">
-                    <div class="heli-nome">
+                    <header class="heli-nome">
                         <h2>Phoenix</h2>
                         <span class="modelo">AS350</span>
-                    </div>
-                    <div class="heli-descricao">
-                        <p>Helicóptero principal da frota SAER, utilizado em missões de patrulhamento, reconhecimento aéreo e apoio a operações terrestres. Leve, ágil e versátil.</p>
-                    </div>
-                    <div class="heli-especificacoes">
-                        <div class="espec-item">
-                            <span class="espec-icone">⚡</span>
+                    </header>
+
+                    <p class="heli-descricao">
+                        Helicóptero principal da frota SAER, utilizado em missões de patrulhamento,
+                        reconhecimento aéreo e apoio a operações terrestres. Leve, ágil e versátil.
+                    </p>
+
+                    <ul class="heli-especs">
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Velocidade</span>
                             <span class="espec-valor">Alta</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">👥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Tripulação</span>
-                            <span class="espec-valor">2-4</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">🎯</span>
+                            <span class="espec-valor">2–4</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <circle cx="12" cy="12" r="6" />
+                                    <circle cx="12" cy="12" r="2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Função</span>
                             <span class="espec-valor">Patrulha</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
                     <div class="heli-uso">
-                        <h4>Usado por:</h4>
+                        <h4>Usado por</h4>
                         <div class="uso-tags">
                             <span class="uso-tag">Piloto SAER</span>
                             <span class="uso-tag">Atirador SAER</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
 
-        <!-- Card Pelicano com Guincho -->
-        <div class="heli-card pelicano-guincho">
-            <div class="heli-card-inner">
+            <!-- Pelicano (com guincho) -->
+            <article class="heli-card" data-cat="resgate">
                 <div class="heli-imagem">
-                    <img src="../image/uh1.png" alt="UH1 Pelicano com Guincho">
-                    <div class="heli-tag resgate">Resgate</div>
+                    <img src="../image/uh1.png" alt="Helicóptero Pelicano UH1 com guincho" loading="lazy">
+                    <span class="heli-tag tag-resgate">Resgate</span>
                 </div>
                 <div class="heli-info">
-                    <div class="heli-nome">
+                    <header class="heli-nome">
                         <h2>Pelicano</h2>
-                        <span class="modelo">UH1 (com guincho)</span>
-                    </div>
-                    <div class="heli-descricao">
-                        <p>Versão equipada com guincho para operações de resgate e salvamento. Ideal para operações que exigem içamento de equipes ou resgate de vítimas.</p>
-                    </div>
-                    <div class="heli-especificacoes">
-                        <div class="espec-item">
-                            <span class="espec-icone">⚡</span>
+                        <span class="modelo">UH1 · com guincho</span>
+                    </header>
+
+                    <p class="heli-descricao">
+                        Versão equipada com guincho para operações de resgate e salvamento.
+                        Ideal para missões que exigem içamento de equipes ou resgate de vítimas.
+                    </p>
+
+                    <ul class="heli-especs">
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Velocidade</span>
                             <span class="espec-valor">Alta</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">👥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Tripulação</span>
                             <span class="espec-valor">6</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">🪢</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2v6" />
+                                    <path d="M12 16v6" />
+                                    <path d="M5 12h14" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Função</span>
                             <span class="espec-valor">Resgate</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
                     <div class="heli-uso">
-                        <h4>Usado por:</h4>
+                        <h4>Usado por</h4>
                         <div class="uso-tags">
                             <span class="uso-tag exclusivo">Elite SAER</span>
                             <span class="uso-tag exclusivo">CORE</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
 
-        <!-- Card Pelicano sem Guincho -->
-        <div class="heli-card pelicano-sem">
-            <div class="heli-card-inner">
+            <!-- Pelicano (sem guincho) -->
+            <article class="heli-card" data-cat="combate">
                 <div class="heli-imagem">
-                    <img src="../image/huey.png" alt="UH1 Pelicano">
-                    <div class="heli-tag transporte">Combate</div>
+                    <img src="../image/huey.png" alt="Helicóptero Pelicano UH1 blindado" loading="lazy">
+                    <span class="heli-tag tag-combate">Combate</span>
                 </div>
                 <div class="heli-info">
-                    <div class="heli-nome">
+                    <header class="heli-nome">
                         <h2>Pelicano</h2>
                         <span class="modelo">UH1</span>
-                    </div>
-                    <div class="heli-descricao">
-                        <p>Versão blindada do Pelicano para pacificações e apoio geral em operações. Robusto e confiável para missões diversas.</p>
-                    </div>
-                    <div class="heli-especificacoes">
-                        <div class="espec-item">
-                            <span class="espec-icone">⚡</span>
+                    </header>
+
+                    <p class="heli-descricao">
+                        Versão blindada do Pelicano para pacificações e apoio geral em operações.
+                        Robusto e confiável para missões diversas.
+                    </p>
+
+                    <ul class="heli-especs">
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Velocidade</span>
                             <span class="espec-valor">Média</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">👥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Tripulação</span>
                             <span class="espec-valor">3</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">💥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Função</span>
                             <span class="espec-valor">Pacificação</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
                     <div class="heli-uso">
-                        <h4>Usado por:</h4>
+                        <h4>Usado por</h4>
                         <div class="uso-tags">
                             <span class="uso-tag exclusivo">Elite SAER</span>
                             <span class="uso-tag exclusivo">CORE</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
 
-        <!-- Card Raptor -->
-        <div class="heli-card raptor">
-            <div class="heli-card-inner">
+            <!-- Raptor -->
+            <article class="heli-card" data-cat="ataque">
                 <div class="heli-imagem">
-                    <img src="../image/buzzard.png" alt="Buzzard Raptor">
-                    <div class="heli-tag ataque">Avançado</div>
+                    <img src="../image/buzzard.png" alt="Helicóptero Raptor Buzzard" loading="lazy">
+                    <span class="heli-tag tag-ataque">Avançado</span>
                 </div>
                 <div class="heli-info">
-                    <div class="heli-nome">
+                    <header class="heli-nome">
                         <h2>Raptor</h2>
                         <span class="modelo">Buzzard</span>
-                    </div>
-                    <div class="heli-descricao">
-                        <p>Helicóptero de ataque e suporte tático para operações especiais. Podendo levar múltiplos atiradores. Leve, ágil e versátil.</p>
-                    </div>
-                    <div class="heli-especificacoes">
-                        <div class="espec-item">
-                            <span class="espec-icone">⚡</span>
+                    </header>
+
+                    <p class="heli-descricao">
+                        Helicóptero de ataque e suporte tático para operações especiais.
+                        Podendo levar múltiplos atiradores. Leve, ágil e versátil.
+                    </p>
+
+                    <ul class="heli-especs">
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Velocidade</span>
                             <span class="espec-valor">Muito Alta</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">👥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Tripulação</span>
                             <span class="espec-valor">8</span>
-                        </div>
-                        <div class="espec-item">
-                            <span class="espec-icone">💥</span>
+                        </li>
+                        <li class="espec-item">
+                            <span class="espec-icone" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <circle cx="12" cy="12" r="6" />
+                                    <circle cx="12" cy="12" r="2" />
+                                </svg>
+                            </span>
                             <span class="espec-label">Função</span>
                             <span class="espec-valor">Patrulha</span>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+
                     <div class="heli-uso">
-                        <h4>Usado por:</h4>
+                        <h4>Usado por</h4>
                         <div class="uso-tags">
                             <span class="uso-tag exclusivo">Elite SAER</span>
-                            <!-- <span class="uso-tag exclusivo">CORE</span> -->
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </article>
 
-    <!-- Legenda -->
-    <section class="legenda-sec">
-        <div class="legenda-container">
-            <h3>Legenda de Funções</h3>
-            <div class="legenda-grid">
-                <div class="legenda-item">
-                    <span class="legenda-cor principal"></span>
-                    <span>Patrulha/Reconhecimento</span>
-                </div>
-                <div class="legenda-item">
-                    <span class="legenda-cor resgate"></span>
-                    <span>Resgate/Salvamento</span>
-                </div>
-                <div class="legenda-item">
-                    <!-- <span class="legenda-cor transporte"></span>
-                    <span>Transporte/Apoio</span> -->
-                </div>
-                <div class="legenda-item">
-                    <span class="legenda-cor ataque"></span>
-                    <span>Ataque/Combate</span>
-                </div>
-                <div class="legenda-item">
-                    <span class="legenda-cor exclusivo"></span>
-                    <span>Elite / CORE</span>
-                </div>
+        </section>
+
+        <!-- ==================== LEGENDA ==================== -->
+        <section class="legenda-sec" aria-labelledby="legenda-titulo">
+            <div class="legenda-container">
+                <h3 id="legenda-titulo">Legenda de Funções</h3>
+                <ul class="legenda-grid">
+                    <li class="legenda-item">
+                        <span class="legenda-cor" data-cor="principal" aria-hidden="true"></span>
+                        <span>Patrulha / Reconhecimento</span>
+                    </li>
+                    <li class="legenda-item">
+                        <span class="legenda-cor" data-cor="resgate" aria-hidden="true"></span>
+                        <span>Resgate / Salvamento</span>
+                    </li>
+                    <li class="legenda-item">
+                        <span class="legenda-cor" data-cor="ataque" aria-hidden="true"></span>
+                        <span>Ataque / Combate</span>
+                    </li>
+                    <li class="legenda-item">
+                        <span class="legenda-cor" data-cor="exclusivo" aria-hidden="true"></span>
+                        <span>Elite / CORE</span>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
-    
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; 2026 SAER - Revoada RJ.</p>
+            <div class="rodape-info">
+                <img src="../image/SaerLogo.png" alt="" width="40" height="40" loading="lazy">
+                <p>Serviço Aeropolicial — PCERJ</p>
+            </div>
+
+            <p class="rodape-copy">&copy; 2026 SAER — Revoada RJ. Todos os direitos reservados.</p>
+
             <div class="redes">
-                <a href="#">Instagram</a>
-                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162" title="Discord">💬 Discord</a>
-                <a href="https://github.com/scotthzx" title="GitHub">🐙 GitHub</a>
+                <a href="#" aria-label="Instagram do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162"
+                    aria-label="Discord do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                    Discord
+                </a>
+                <a href="https://github.com/scotthzx" aria-label="GitHub do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.07v3.07c0 .3.2.65.78.54 4.47-1.5 7.7-5.71 7.7-10.69C23.25 5.48 18.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </footer>
+
 </body>
+
 </html>

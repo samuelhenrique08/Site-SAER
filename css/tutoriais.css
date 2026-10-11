@@ -1,0 +1,650 @@
+/* ============================================================
+   PÁGINA: TUTORIAIS
+   Depende de: base.css
+   ============================================================ */
+
+/* ==================== SEÇÃO ==================== */
+.tutoriais-sec {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral) var(--espaco-secao);
+}
+
+/* ==================== NAVEGAÇÃO (reaproveita estilos de abas) ==================== */
+.abas-container {
+    width: 100%;
+}
+
+.abas-navegacao {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-dourada) transparent;
+    -ms-overflow-style: none;
+}
+
+.abas-navegacao::-webkit-scrollbar {
+    height: 4px;
+}
+
+.abas-navegacao::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 172, 113, 0.4);
+    border-radius: 4px;
+}
+
+.aba-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cor-texto-suave);
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transicao);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.aba-btn:hover {
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+}
+
+.aba-btn.ativo {
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    border-color: var(--cor-dourada);
+    box-shadow: 0 0 15px rgba(199, 172, 113, 0.2);
+}
+
+.aba-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.aba-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== PAINÉIS ==================== */
+.abas-conteudo {
+    position: relative;
+}
+
+.aba-painel {
+    display: none;
+}
+
+.aba-painel.ativo {
+    display: block;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== CARD BASE ==================== */
+.tutorial-card {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.tutorial-card:hover {
+    border-color: var(--cor-dourada);
+    box-shadow: 0 0 25px rgba(199, 172, 113, 0.15);
+}
+
+.tutorial-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tutorial-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    color: var(--cor-dourada);
+    margin-bottom: 1rem;
+}
+
+.tutorial-icone svg {
+    width: 26px;
+    height: 26px;
+}
+
+.tutorial-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: var(--cor-dourada);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-desc {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+/* ==================== VÍDEO ==================== */
+.video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--raio);
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    background-color: #000;
+    margin-bottom: 1.25rem;
+}
+
+.video-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-info {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--cor-dourada);
+    padding: 1rem 1.25rem;
+    border-radius: 0 var(--raio) var(--raio) 0;
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.6;
+}
+
+/* ==================== DICAS EXTRAS ==================== */
+.dicas-extras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.dicas-card {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+    padding: 1.75rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all var(--transicao);
+}
+
+.dicas-card:hover {
+    border-color: var(--cor-dourada);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(199, 172, 113, 0.15);
+}
+
+.dicas-card.avisos {
+    border-color: rgba(255, 154, 92, 0.3);
+}
+
+.dicas-card.avisos:hover {
+    border-color: #ff9a5c;
+    box-shadow: 0 10px 25px rgba(255, 154, 92, 0.15);
+}
+
+.dicas-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1.25rem;
+    color: var(--cor-dourada);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.dicas-card.avisos h3 {
+    color: #ff9a5c;
+}
+
+.dicas-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: inherit;
+}
+
+.dicas-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dicas-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dicas-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--cor-texto);
+}
+
+.dicas-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--cor-dourada);
+}
+
+.dicas-card.avisos li::before {
+    background-color: #ff9a5c;
+}
+
+/* ==================== ABA CONFIGURAÇÕES ==================== */
+.config-card {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.config-intro {
+    padding: 1.25rem;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid rgba(199, 172, 113, 0.3);
+    border-radius: var(--raio);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.config-intro p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--cor-texto);
+}
+
+.config-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.config-item {
+    display: grid;
+    grid-template-columns: minmax(140px, auto) 24px 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    transition: all var(--transicao);
+}
+
+.config-item:hover {
+    border-color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    transform: translateX(4px);
+}
+
+.tecla {
+    display: block;
+}
+
+.tecla kbd {
+    display: block;
+    padding: 0.55rem 0.85rem;
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cor-dourada);
+    background-color: #1a1a1a;
+    border: 1.5px solid var(--cor-dourada);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(199, 172, 113, 0.3);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.tecla.mouse kbd {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    border-style: dashed;
+}
+
+.seta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-dourada);
+    width: 20px;
+    height: 20px;
+}
+
+.seta svg {
+    width: 100%;
+    height: 100%;
+}
+
+.acao {
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.config-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio);
+    font-size: 0.85rem;
+    color: var(--cor-texto);
+}
+
+.config-footer strong {
+    color: var(--cor-dourada);
+    background-color: rgba(199, 172, 113, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* ==================== ABA PROTOCOLO ==================== */
+.protocolo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.protocolo-header {
+    text-align: center;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.protocolo-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    color: var(--cor-dourada);
+    margin-bottom: 1rem;
+}
+
+.protocolo-icone svg {
+    width: 26px;
+    height: 26px;
+}
+
+.protocolo-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    color: var(--cor-dourada);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.protocolo-subtitulo {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    font-style: italic;
+}
+
+.protocolo-intro {
+    padding: 1.5rem;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid rgba(199, 172, 113, 0.3);
+    border-radius: var(--raio);
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+.protocolo-importancia h3 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    color: var(--cor-dourada);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.importancia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.importancia-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all var(--transicao);
+}
+
+.importancia-card:hover {
+    border-color: var(--cor-dourada);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(199, 172, 113, 0.15);
+}
+
+.importancia-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    color: var(--cor-dourada);
+}
+
+.importancia-icone svg {
+    width: 20px;
+    height: 20px;
+}
+
+.importancia-texto h4 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    color: var(--cor-dourada);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.importancia-texto p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--cor-texto-suave);
+}
+
+/* ---------- Imagens do protocolo ---------- */
+.protocolo-imagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.imagem-card {
+    margin: 0;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    padding: 1.25rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all var(--transicao);
+}
+
+.imagem-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(199, 172, 113, 0.2);
+}
+
+.imagem-titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    color: var(--cor-dourada);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.imagem-wrapper {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: var(--raio);
+    overflow: hidden;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: calc(var(--raio) - 4px);
+    transition: transform var(--transicao);
+}
+
+.imagem-wrapper img:hover {
+    transform: scale(1.02);
+}
+
+/* ---------- Conclusão ---------- */
+.protocolo-conclusao {
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+}
+
+.protocolo-conclusao h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    color: var(--cor-dourada);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.protocolo-conclusao p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--cor-texto);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 600px) {
+    .abas-navegacao {
+        gap: 0.35rem;
+        padding-bottom: 0.75rem;
+        mask-image: linear-gradient(to right, transparent, #000 8px, #000 calc(100% - 8px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 8px, #000 calc(100% - 8px), transparent);
+    }
+
+    .aba-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .aba-icone {
+        width: 16px;
+        height: 16px;
+    }
+
+    .config-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 0.6rem;
+    }
+
+    .seta {
+        display: none;
+    }
+
+    .tecla kbd {
+        width: 100%;
+    }
+
+    .dicas-card,
+    .importancia-card,
+    .tutorial-card {
+        padding: 1.25rem;
+    }
+}

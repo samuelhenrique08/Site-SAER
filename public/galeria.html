@@ -1,79 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAER - Galeria</title>
-    <link rel="stylesheet" href="../style/galeria.css">
-    <link rel="icon" type="image/x-icon" href="../image/SaerLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../image/SaerLogo.png" alt="Logo SAER" class="logo1">
-        </a>
+    <meta name="description" content="Galeria de fotos das operações e da equipe do SAER - Serviço Aeropolicial.">
+    <meta name="theme-color" content="#0a0a0a">
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="helicopteros.html">Helicópteros</a></li>
-                <li><a href="galeria.html" class="ativo">Fotos</a></li>
-                <li><a href="funcoes.html">Funções</a></li>
-                <li><a href="tutoriais.html">Tutoriais</a></li>
-                <li><a href="regras.html">Regras</a></li>
-                <li><a href="memorial.html">Memorial</a></li>
-            </ul>
-        </nav>
+    <meta property="og:title" content="Galeria - SAER">
+    <meta property="og:description" content="Fotos das operações e da equipe do Serviço Aeropolicial.">
+    <meta property="og:image" content="../image/SaerLogo.png">
+    <meta property="og:type" content="website">
+
+    <title>Galeria - SAER</title>
+
+    <link rel="icon" type="image/png" href="../image/SaerLogo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+
+    <script defer src="../script/app5.js"></script>
+    <script defer src="../script/galeria.js"></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo" aria-label="SAER - Página inicial">
+                <img src="../image/SaerLogo.png" alt="" width="48" height="48">
+                <span class="logo-texto">SAER</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="helicopteros.html">Helicópteros</a></li>
+                    <li><a href="galeria.html" class="ativo" aria-current="page">Fotos</a></li>
+                    <li><a href="funcoes.html">Funções</a></li>
+                    <li><a href="tutoriais.html">Tutoriais</a></li>
+                    <li><a href="regras.html">Regras</a></li>
+                    <li><a href="memorial.html">Memorial</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <main class="main">
-        <div class="main-content">
-            <h1>Galeria</h1>
-        </div>
+
+    <main>
+
+        <!-- ==================== TÍTULO ==================== -->
+        <section class="page-header" aria-labelledby="page-titulo">
+            <span class="hero-tag">Registros SAER</span>
+            <h1 id="page-titulo">Galeria</h1>
+            <p>Fotos das operações e da equipe do Serviço Aeropolicial</p>
+        </section>
+
+        <!-- ==================== VISUALIZADOR ==================== -->
+        <section class="galeria-sec" aria-label="Visualizador de fotos">
+
+            <div class="galeria-container">
+                <button class="nav-btn" data-direcao="-1" aria-label="Foto anterior" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+
+                <figure class="foto-display">
+                    <button class="foto-wrapper" id="fotoBotao" type="button" aria-label="Ampliar foto">
+                        <img id="fotoAtual" src="../image/galeria1.png" alt="Foto SAER 1" decoding="async"
+                            class="foto-principal">
+                    </button>
+                    <figcaption class="foto-legenda" id="fotoLegenda"></figcaption>
+                </figure>
+
+                <button class="nav-btn" data-direcao="1" aria-label="Próxima foto" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Contador + bolinhas -->
+            <div class="galeria-status" aria-live="polite">
+                <span class="contador" id="fotoContador">1 / 17</span>
+                <div class="paginacao-bolinhas" id="bolinhasContainer" role="tablist"
+                    aria-label="Navegação rápida entre fotos"></div>
+            </div>
+
+            <!-- Miniaturas -->
+            <div class="miniaturas-wrapper">
+                <div class="miniaturas" id="miniaturasContainer" role="tablist" aria-label="Miniaturas das fotos"></div>
+            </div>
+
+        </section>
+
     </main>
-    
-    <section class="galeria-sec">
-        <div class="galeria-container">
-            <button class="nav-btn prev-btn" onclick="mudarFoto(-1)" aria-label="Foto anterior">
-                <span>&#10094;</span>
-            </button>
-            
-            <div class="foto-display">
-                <div class="foto-wrapper">
-                    <img id="fotoAtual" src="../image/galeria1.png" alt="Foto SAER" class="foto-principal">
-                </div>
-            </div>
-            
-            <button class="nav-btn next-btn" onclick="mudarFoto(1)" aria-label="Próxima foto">
-                <span>&#10095;</span>
-            </button>
-        </div>
-        
-        <div class="contador">
-            <span id="fotoContador">1 / 17</span>
-        </div>
-        
-        <!-- Grid de Miniaturas -->
-        <div class="miniaturas-wrapper">
-            <!-- <div class="titulo-miniaturas">📸 Todas as Fotos</div> -->
-            <div class="miniaturas" id="miniaturasContainer">
-                <!-- Preenchido automaticamente pelo JavaScript -->
-            </div>
-        </div>
-    </section>
-    
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div class="lightbox" id="lightbox" hidden aria-modal="true" role="dialog" aria-label="Foto ampliada">
+        <button class="lightbox-fechar" id="lightboxFechar" aria-label="Fechar visualização" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; 2026 SAER - Revoada RJ.</p>
+            <div class="rodape-info">
+                <img src="../image/SaerLogo.png" alt="" width="40" height="40" loading="lazy">
+                <p>Serviço Aeropolicial — PCERJ</p>
+            </div>
+
+            <p class="rodape-copy">&copy; 2026 SAER — Revoada RJ. Todos os direitos reservados.</p>
+
             <div class="redes">
-                <a href="#">Instagram</a>
-                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162" title="Discord">💬 Discord</a>
-                <a href="https://github.com/scotthzx" title="GitHub">🐙 GitHub</a>
+                <a href="#" aria-label="Instagram do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162"
+                    aria-label="Discord do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                    Discord
+                </a>
+                <a href="https://github.com/scotthzx" aria-label="GitHub do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.07v3.07c0 .3.2.65.78.54 4.47-1.5 7.7-5.71 7.7-10.69C23.25 5.48 18.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="../script/app.js"></script>
 </body>
+
 </html>

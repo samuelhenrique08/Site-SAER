@@ -1,0 +1,341 @@
+/* ============================================================
+   PÁGINA: HELICÓPTEROS
+   Depende de: base.css (variáveis, header, footer, botões)
+   ============================================================ */
+
+/* ==================== TÍTULO DA PÁGINA ==================== */
+.page-header {
+    text-align: center;
+    padding: clamp(3rem, 7vw, 5rem) var(--espaco-lateral) clamp(1.5rem, 3vw, 2rem);
+}
+
+.page-header .hero-tag {
+    margin-bottom: 1rem;
+}
+
+.page-header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--cor-dourada);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: var(--cor-texto-suave);
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+}
+
+/* ==================== GRID DE HELICÓPTEROS ==================== */
+.helicopteros-sec {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral) var(--espaco-secao);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+/* ==================== CARD ==================== */
+.heli-card {
+    --cor-cat: var(--cor-dourada);
+    /* cor padrão, sobrescrita por categoria */
+
+    background-color: var(--cor-fundo-card);
+    border: 1px solid color-mix(in srgb, var(--cor-cat) 40%, transparent);
+    border-radius: var(--raio-grande);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+
+.heli-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-cat);
+    box-shadow: 0 15px 35px color-mix(in srgb, var(--cor-cat) 25%, transparent);
+}
+
+/* Cores por categoria */
+.heli-card[data-cat="principal"] {
+    --cor-cat: #ffd700;
+}
+
+.heli-card[data-cat="resgate"] {
+    --cor-cat: #ff8800;
+}
+
+.heli-card[data-cat="combate"] {
+    --cor-cat: #ff4444;
+}
+
+.heli-card[data-cat="ataque"] {
+    --cor-cat: #ff4444;
+}
+
+/* ==================== IMAGEM ==================== */
+.heli-imagem {
+    position: relative;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid color-mix(in srgb, var(--cor-cat) 25%, transparent);
+}
+
+.heli-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform var(--transicao);
+}
+
+.heli-card:hover .heli-imagem img {
+    transform: scale(1.08);
+}
+
+/* ==================== TAGS ==================== */
+.heli-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-family: var(--fonte-titulo);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: var(--cor-cat);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ==================== INFO ==================== */
+.heli-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.heli-nome {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.heli-nome h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--cor-texto);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.modelo {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
+
+.heli-descricao {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.65;
+}
+
+/* ==================== ESPECIFICAÇÕES ==================== */
+.heli-especs {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+}
+
+.espec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.75rem 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid color-mix(in srgb, var(--cor-cat) 25%, transparent);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.espec-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--cor-cat);
+}
+
+.espec-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+.espec-label {
+    font-size: 0.65rem;
+    color: var(--cor-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.espec-valor {
+    font-family: var(--fonte-titulo);
+    font-size: 0.95rem;
+    color: var(--cor-cat);
+    letter-spacing: 1px;
+}
+
+/* ==================== USO ==================== */
+.heli-uso {
+    margin-top: auto;
+}
+
+.heli-uso h4 {
+    font-size: 0.7rem;
+    color: var(--cor-texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+.uso-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.uso-tag {
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid color-mix(in srgb, var(--cor-dourada) 40%, transparent);
+}
+
+.uso-tag.exclusivo {
+    color: #ffd700;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.6);
+}
+
+/* ==================== LEGENDA ==================== */
+.legenda-sec {
+    max-width: 750px;
+    margin: 0 auto var(--espaco-secao);
+    padding: 0 var(--espaco-lateral);
+}
+
+.legenda-container {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: 1.75rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.legenda-container h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-dourada);
+    font-size: 1.25rem;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.legenda-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+}
+
+.legenda-cor {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.legenda-cor[data-cor="principal"] {
+    background-color: #ffd700;
+}
+
+.legenda-cor[data-cor="resgate"] {
+    background-color: #ff8800;
+}
+
+.legenda-cor[data-cor="ataque"] {
+    background-color: #ff4444;
+}
+
+.legenda-cor[data-cor="exclusivo"] {
+    background: linear-gradient(135deg, #c7ac71, #ffd700);
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 600px) {
+    .helicopteros-sec {
+        grid-template-columns: 1fr;
+    }
+
+    .heli-imagem {
+        height: 180px;
+        padding: 1.25rem;
+    }
+
+    .heli-especs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .espec-item {
+        padding: 0.6rem 0.35rem;
+    }
+
+    .espec-label {
+        font-size: 0.6rem;
+    }
+
+    .espec-valor {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .heli-especs {
+        grid-template-columns: 1fr;
+    }
+}

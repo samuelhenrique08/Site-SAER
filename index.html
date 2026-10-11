@@ -1,187 +1,273 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SAER - Serviço Aeropolicial da PCERJ. Unidade aérea de apoio a operações policiais, resgates e observação aérea.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph (pra compartilhar no Discord/WhatsApp) -->
+    <meta property="og:title" content="SAER - Serviço Aeropolicial">
+    <meta property="og:description" content="Voamos para lutar e salvar!">
+    <meta property="og:image" content="image/SaerLogo.png">
+    <meta property="og:type" content="website">
+
     <title>SAER - Serviço Aeropolicial</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="image/SaerLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="image/SaerLogo.png">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
     <script defer src="script/app5.js"></script>
 </head>
+
 <body>
+
+    <!-- ==================== HEADER ==================== -->
     <header class="header">
-        <a href="index.html" class="logo">
-            <img src="image/SaerLogo.png" alt="Logo SAER" class="logo1">
-        </a>
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="SAER - Página inicial">
+                <img src="image/SaerLogo.png" alt="" width="48" height="48">
+                <span class="logo-texto">SAER</span>
+            </a>
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="ativo">Home</a></li>
-                <li><a href="public/helicopteros.html">Helicópteros</a></li>
-                <li><a href="public/galeria.html">Fotos</a></li>
-                <li><a href="public/funcoes.html">Funções</a></li>
-                <li><a href="public/tutoriais.html">Tutoriais</a></li>
-                <li><a href="public/regras.html">Regras</a></li>
-                <li><a href="public/memorial.html">Memorial</a></li>
-            </ul>
-        </nav>
+            <!-- Botão hamburguer (só aparece no mobile) -->
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="ativo" aria-current="page">Home</a></li>
+                    <li><a href="public/helicopteros.html">Helicópteros</a></li>
+                    <li><a href="public/galeria.html">Fotos</a></li>
+                    <li><a href="public/funcoes.html">Funções</a></li>
+                    <li><a href="public/tutoriais.html">Tutoriais</a></li>
+                    <li><a href="public/regras.html">Regras</a></li>
+                    <li><a href="public/memorial.html">Memorial</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-texto">
-                <!-- <div class="hero-barra"></div> -->
-                <h1>SAER</h1>
-                <h2>Serviço Aeropolicial</h2>
-                <p class="hero-slogan">"Voamos para lutar e salvar!"</p>
-                <p class="hero-descricao">O SAER da PCERJ é o Serviço Aeropolicial, a unidade aérea da Polícia Civil do Estado do Rio de Janeiro. Opera helicópteros utilizados em missões policiais, apoio a operações, transporte de equipes especiais, resgates e observação aérea.</p>
-                <div class="hero-botoes">
-                    <a href="public/helicopteros.html" class="btn-hero btn-primario">Nossas Aeronaves</a>
-                    <a href="public/funcoes.html" class="btn-hero btn-secundario">Nossas Funções</a>
-                </div>
-            </div>
-            <div class="hero-imagem">
-                <!-- <img src="image/as350.png" alt="Helicóptero SAER Phoenix" class="hero-helicoptero"> -->
-            </div>
-        </div>
-    </section>
-    <section class="aeronaves-sec">
-        <div class="secao-header">
-            <div class="secao-barra"></div>
-            <h2>Nossas Aeronaves</h2>
-        </div>
-        <div class="aeronaves-grid">
-            <div class="aeronave-card">
-                <div class="aeronave-img">
-                    <img src="image/as350.png" alt="Phoenix AS350">
-                </div>
-                <div class="aeronave-info">
-                    <h3>Phoenix</h3>
-                    <p>AS350 - Helicóptero principal para patrulhamento e operações táticas.</p>
-                    <a href="public/helicopteros.html" class="btn-card">Ver Detalhes</a>
-                </div>
-            </div>
-            
-            <div class="aeronave-card">
-                <div class="aeronave-img">
-                    <img src="image/uh1.png" alt="Pelicano UH1">
-                </div>
-                <div class="aeronave-info">
-                    <h3>Pelicano</h3>
-                    <p>UH1 - Equipado com guincho para operações de resgate e salvamento.</p>
-                    <a href="public/helicopteros.html" class="btn-card">Ver Detalhes</a>
-                </div>
-            </div>
-            
-            <div class="aeronave-card destaque">
-                <div class="aeronave-img">
-                    <img src="image/buzzard.png" alt="Raptor">
-                </div>
-                <div class="aeronave-info">
-                    <h3>Raptor</h3>
-                    <p>Helicóptero de ataque e suporte tático para operações especiais.</p>
-                    <a href="public/helicopteros.html" class="btn-card">Ver Detalhes</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    
-    <section class="comandantes-sec">
-        <div class="secao-header">
-            <div class="secao-barra"></div>
-            <h2>Comando Atual</h2>
-        </div>
-        <div class="comandantes-grid">
-            <div class="comandante-card">
-                <div class="comandante-foto">
-                    <img src="image/scott.png" alt="Comandante Scott">
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" aria-labelledby="hero-titulo">
+            <div class="hero-container">
+                <div class="hero-texto">
+                    <span class="hero-tag">PCERJ · Unidade Aérea</span>
+                    <h1 id="hero-titulo">SAER</h1>
+                    <h2>Serviço Aeropolicial</h2>
+                    <p class="hero-slogan">"Voamos para lutar e salvar!"</p>
+                    <p class="hero-descricao">
+                        O SAER da PCERJ é o Serviço Aeropolicial, a unidade aérea da Polícia Civil
+                        do Estado do Rio de Janeiro. Opera helicópteros em missões policiais,
+                        apoio a operações, transporte de equipes especiais, resgates e observação aérea.
+                    </p>
+                    <div class="hero-botoes">
+                        <a href="public/helicopteros.html" class="btn btn-primario">Nossas Aeronaves</a>
+                        <a href="public/funcoes.html" class="btn btn-secundario">Nossas Funções</a>
+                    </div>
                 </div>
-                <div class="comandante-info">
-                    <span class="cargo-tag">Comandante</span>
-                    <h3>Scott</h3>
-                    <p>Comando SAER</p>
-                </div>
-            </div>
-            
-            <div class="comandante-card">
-                <div class="comandante-foto">
-                    <img src="image/carpa.png" alt="Subcomandante Carpa">
-                </div>
-                <div class="comandante-info">
-                    <span class="cargo-tag sub">Subcomandante</span>
-                    <h3>Carpa</h3>
-                    <p>Subcomando SAER</p>
+
+                <div class="hero-imagem">
+                    <img src="image/as350.png" alt="Helicóptero AS350 do SAER" width="500" height="500" loading="eager">
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="links-sec">
-        <div class="secao-header">
-            <div class="secao-barra"></div>
-            <h2>Acesso Rápido</h2>
-        </div>
-        <div class="links-grid">
-            <a href="public/tutoriais.html" class="link-card">
-                <div class="link-icone">🎥</div>
-                <h3>Tutoriais</h3>
-                <p>Percurso de voo e configurações</p>
-            </a>
-            
-            <a href="public/regras.html" class="link-card">
-                <div class="link-icone">📋</div>
-                <h3>Regras</h3>
-                <p>Normas e diretrizes do grupamento</p>
-            </a>
-            
-            <a href="public/galeria.html" class="link-card">
-                <div class="link-icone">📸</div>
-                <h3>Galeria</h3>
-                <p>Fotos das operações e equipe</p>
-            </a>
-            
-            <a href="public/memorial.html" class="link-card">
-                <div class="link-icone">🕊️</div>
-                <h3>Memorial</h3>
-                <p>Antigos comandantes do SAER</p>
-            </a>
-        </div>
-    </section>
-    <section class="stats-sec">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-numero">8</span>
-                <span class="stat-label">Gestões</span>
+        </section>
+
+        <!-- ==================== AERONAVES ==================== -->
+        <section class="secao" aria-labelledby="aeronaves-titulo">
+            <header class="secao-header">
+                <span class="secao-barra" aria-hidden="true"></span>
+                <h2 id="aeronaves-titulo">Nossas Aeronaves</h2>
+            </header>
+
+            <div class="grid-cards">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/as350.png" alt="Helicóptero Phoenix AS350" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3>Phoenix</h3>
+                        <p>AS350 — Helicóptero principal para patrulhamento e operações táticas.</p>
+                        <a href="public/helicopteros.html" class="btn btn-card">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <img src="image/uh1.png" alt="Helicóptero Pelicano UH1" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pelicano</h3>
+                        <p>UH1 — Equipado com guincho para operações de resgate e salvamento.</p>
+                        <a href="public/helicopteros.html" class="btn btn-card">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="card destaque">
+                    <div class="card-img">
+                        <img src="image/buzzard.png" alt="Helicóptero Raptor" loading="lazy">
+                    </div>
+                    <div class="card-info">
+                        <h3>Raptor</h3>
+                        <p>Helicóptero de ataque e suporte tático para operações especiais.</p>
+                        <a href="public/helicopteros.html" class="btn btn-card">Ver Detalhes</a>
+                    </div>
+                </article>
             </div>
-            <div class="stat-item">
-                <span class="stat-numero">4</span>
-                <span class="stat-label">Aeronaves</span>
+        </section>
+
+        <!-- ==================== COMANDO ==================== -->
+        <section class="secao secao-escura" aria-labelledby="comando-titulo">
+            <header class="secao-header">
+                <span class="secao-barra" aria-hidden="true"></span>
+                <h2 id="comando-titulo">Comando Atual</h2>
+            </header>
+
+            <div class="comandantes-grid">
+                <article class="comandante-card">
+                    <div class="comandante-foto">
+                        <img src="image/scott.png" alt="Comandante Scott" loading="lazy">
+                    </div>
+                    <div class="comandante-info">
+                        <span class="cargo-tag">Comandante</span>
+                        <h3>Scott</h3>
+                        <p>Comando SAER</p>
+                    </div>
+                </article>
+
+                <article class="comandante-card">
+                    <div class="comandante-foto">
+                        <img src="image/carpa.png" alt="Subcomandante Carpa" loading="lazy">
+                    </div>
+                    <div class="comandante-info">
+                        <span class="cargo-tag sub">Subcomandante</span>
+                        <h3>Carpa</h3>
+                        <p>Subcomando SAER</p>
+                    </div>
+                </article>
             </div>
-            <div class="stat-item">
-                <span class="stat-numero">19</span>
-                <span class="stat-label">Regras</span>
+        </section>
+
+        <!-- ==================== ACESSO RÁPIDO ==================== -->
+        <section class="secao" aria-labelledby="acesso-titulo">
+            <header class="secao-header">
+                <span class="secao-barra" aria-hidden="true"></span>
+                <h2 id="acesso-titulo">Acesso Rápido</h2>
+            </header>
+
+            <div class="grid-cards grid-links">
+                <a href="public/tutoriais.html" class="link-card">
+                    <span class="link-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7" />
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                        </svg>
+                    </span>
+                    <h3>Tutoriais</h3>
+                    <p>Percurso de voo e configurações</p>
+                </a>
+
+                <a href="public/regras.html" class="link-card">
+                    <span class="link-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="9" y1="13" x2="15" y2="13" />
+                            <line x1="9" y1="17" x2="15" y2="17" />
+                        </svg>
+                    </span>
+                    <h3>Regras</h3>
+                    <p>Normas e diretrizes do grupamento</p>
+                </a>
+
+                <a href="public/galeria.html" class="link-card">
+                    <span class="link-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <circle cx="8.5" cy="8.5" r="1.5" />
+                            <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                    </span>
+                    <h3>Galeria</h3>
+                    <p>Fotos das operações e equipe</p>
+                </a>
+
+                <a href="public/memorial.html" class="link-card">
+                    <span class="link-icone" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v20" />
+                            <path d="M5 22h14" />
+                            <path d="M8 5h8" />
+                            <path d="M6 9l6-4 6 4" />
+                        </svg>
+                    </span>
+                    <h3>Memorial</h3>
+                    <p>Antigos comandantes do SAER</p>
+                </a>
             </div>
-            <div class="stat-item">
-                <span class="stat-numero">5</span>
-                <span class="stat-label">Funções</span>
-            </div>
-        </div>
-    </section>  
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
     <footer class="rodape">
         <div class="rodape-conteudo">
             <div class="rodape-info">
-                <img src="image/SaerLogo.png" alt="SAER Logo" class="rodape-logo">
-                <p>Serviço Aeropolicial - PCERJ</p>
+                <img src="image/SaerLogo.png" alt="" width="40" height="40" loading="lazy">
+                <p>Serviço Aeropolicial — PCERJ</p>
             </div>
-            <p>&copy; 2026 SAER - Revoada RJ. Todos os direitos reservados.</p>
+
+            <p class="rodape-copy">&copy; 2026 SAER — Revoada RJ. Todos os direitos reservados.</p>
+
             <div class="redes">
-                <a href="#" title="Instagram">📷 Instagram</a>
-                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162" title="Discord">💬 Discord</a>
-                <a href="https://github.com/scotthzx" title="GitHub">🐙 GitHub</a>
+                <a href="#" aria-label="Instagram do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162"
+                    aria-label="Discord do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                    Discord
+                </a>
+                <a href="https://github.com/scotthzx" aria-label="GitHub do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.07v3.07c0 .3.2.65.78.54 4.47-1.5 7.7-5.71 7.7-10.69C23.25 5.48 18.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </footer>
+
 </body>
+
 </html>

@@ -1,315 +1,511 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAER - Tutoriais</title>
-    <link rel="stylesheet" href="../style/tutoriais.css">
-    <link rel="icon" type="image/x-icon" href="../image/SaerLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Tutoriais do SAER - Percurso de voo, configurações de teclas e protocolo de posicionamento para pilotos.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <meta property="og:title" content="Tutoriais - SAER">
+    <meta property="og:description"
+        content="Aprenda o percurso de voo, configurações e protocolo do Serviço Aeropolicial.">
+    <meta property="og:image" content="../image/SaerLogo.png">
+    <meta property="og:type" content="website">
+
+    <title>Tutoriais - SAER</title>
+
+    <link rel="icon" type="image/png" href="../image/SaerLogo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/tutoriais.css">
+
+    <script defer src="../script/app5.js"></script>
+    <script defer src="../script/tutoriais.js"></script>
 </head>
+
 <body>
+
+    <!-- ==================== HEADER ==================== -->
     <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../image/SaerLogo.png" alt="Logo SAER" class="logo1">
-        </a>
+        <div class="header-container">
+            <a href="../index.html" class="logo" aria-label="SAER - Página inicial">
+                <img src="../image/SaerLogo.png" alt="" width="48" height="48">
+                <span class="logo-texto">SAER</span>
+            </a>
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="helicopteros.html">Helicópteros</a></li>
-                <li><a href="galeria.html">Fotos</a></li>
-                <li><a href="funcoes.html">Funções</a></li>
-                <li><a href="tutoriais.html" class="ativo">Tutoriais</a></li>
-                <li><a href="regras.html">Regras</a></li>
-                <li><a href="memorial.html">Memorial</a></li>
-        </nav>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="helicopteros.html">Helicópteros</a></li>
+                    <li><a href="galeria.html">Fotos</a></li>
+                    <li><a href="funcoes.html">Funções</a></li>
+                    <li><a href="tutoriais.html" class="ativo" aria-current="page">Tutoriais</a></li>
+                    <li><a href="regras.html">Regras</a></li>
+                    <li><a href="memorial.html">Memorial</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <main class="main">
-        <div class="main-content">
-            <h1>Tutoriais</h1>
-        </div>
+
+    <main>
+
+        <!-- ==================== TÍTULO ==================== -->
+        <section class="page-header" aria-labelledby="page-titulo">
+            <span class="hero-tag">Aprendizado SAER</span>
+            <h1 id="page-titulo">Tutoriais</h1>
+            <p>Guias de voo, configurações e protocolos operacionais</p>
+        </section>
+
+        <!-- ==================== ABAS ==================== -->
+        <section class="tutoriais-sec" aria-label="Tutoriais do SAER">
+            <div class="abas-container">
+
+                <!-- ---------- NAVEGAÇÃO ---------- -->
+                <div class="abas-navegacao" role="tablist" aria-label="Categorias de tutorial">
+                    <button class="aba-btn ativo" type="button" role="tab" id="tab-video" aria-controls="tutorial-video"
+                        aria-selected="true" data-aba="video">
+                        <span class="aba-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                        </span>
+                        <span>Percurso de Voo</span>
+                    </button>
+
+                    <button class="aba-btn" type="button" role="tab" id="tab-config" aria-controls="tutorial-config"
+                        aria-selected="false" data-aba="config">
+                        <span class="aba-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                        </span>
+                        <span>Configurações</span>
+                    </button>
+
+                    <button class="aba-btn" type="button" role="tab" id="tab-protocolo"
+                        aria-controls="tutorial-protocolo" aria-selected="false" data-aba="protocolo">
+                        <span class="aba-icone" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="9" y1="13" x2="15" y2="13" />
+                                <line x1="9" y1="17" x2="15" y2="17" />
+                            </svg>
+                        </span>
+                        <span>Protocolo</span>
+                    </button>
+                </div>
+
+                <!-- ---------- PAINÉIS ---------- -->
+                <div class="abas-conteudo">
+
+                    <!-- ========== ABA VÍDEO ========== -->
+                    <article class="aba-painel ativo" id="tutorial-video" role="tabpanel" aria-labelledby="tab-video"
+                        tabindex="0">
+                        <div class="tutorial-card">
+                            <header class="tutorial-header">
+                                <span class="tutorial-icone" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="23 7 16 12 23 17 23 7" />
+                                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                                    </svg>
+                                </span>
+                                <h2>Percurso de Voo</h2>
+                                <p class="tutorial-desc">Aprenda o percurso completo de voo do SAER</p>
+                            </header>
+
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/2Mly-6RMmwM" title="Percurso de Voo SAER"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="video-info">
+                                <p>Assista ao tutorial completo do percurso de voo e aprenda as melhores práticas para
+                                    pilotar com segurança e eficiência.</p>
+                            </div>
+                        </div>
+
+                        <!-- Dicas extras -->
+                        <div class="dicas-extras">
+                            <div class="dicas-card">
+                                <h3>
+                                    <span class="dicas-icone" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 18h6" />
+                                            <path d="M10 22h4" />
+                                            <path
+                                                d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14" />
+                                        </svg>
+                                    </span>
+                                    Dicas para Pilotos Iniciantes
+                                </h3>
+                                <ul>
+                                    <li>Pratique o percurso em altura elevada primeiro</li>
+                                    <li>Mantenha sempre contato com a torre de controle</li>
+                                    <li>Verifique o checklist antes de cada decolagem</li>
+                                    <li>Treine pousos de emergência regularmente</li>
+                                </ul>
+                            </div>
+
+                            <div class="dicas-card avisos">
+                                <h3>
+                                    <span class="dicas-icone" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                                            <line x1="12" y1="9" x2="12" y2="13" />
+                                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                                        </svg>
+                                    </span>
+                                    Avisos Importantes
+                                </h3>
+                                <ul>
+                                    <li>Nunca desligue o motor em pleno voo</li>
+                                    <li>Respeite o teto máximo de cada aeronave</li>
+                                    <li>Mantenha distância segura de outras aeronaves</li>
+                                    <li>Em caso de pane, comunique imediatamente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ========== ABA CONFIGURAÇÕES ========== -->
+                    <article class="aba-painel" id="tutorial-config" role="tabpanel" aria-labelledby="tab-config"
+                        tabindex="0">
+                        <div class="tutorial-card config-card">
+                            <header class="tutorial-header">
+                                <span class="tutorial-icone" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="3" />
+                                        <path
+                                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                                    </svg>
+                                </span>
+                                <h2>Configurações Recomendadas</h2>
+                                <p class="tutorial-desc">Para pilotos de helicóptero</p>
+                            </header>
+
+                            <div class="config-intro">
+                                <p>A fim de garantir maior controle, precisão e segurança nas operações aéreas, estas
+                                    são as melhores configurações de teclas para os pilotos utilizarem em suas
+                                    aeronaves:</p>
+                            </div>
+
+                            <ul class="config-lista">
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>L. SHIFT</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Acelerar</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>L. CTRL</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Desacelerar</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>A</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Guinar à esquerda</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>D</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Guinar à direita</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla mouse"><kbd>Mouse Esquerdo</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Rolar para a esquerda</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla mouse"><kbd>Mouse Direito</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Rolar para a direita</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>W</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Inclinar para frente</span>
+                                </li>
+
+                                <li class="config-item">
+                                    <span class="tecla"><kbd>S</kbd></span>
+                                    <span class="seta" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12" />
+                                            <polyline points="12 5 19 12 12 19" />
+                                        </svg>
+                                    </span>
+                                    <span class="acao">Inclinar para trás</span>
+                                </li>
+                            </ul>
+
+                            <div class="config-footer">
+                                <p>Essas configurações permitem um voo mais ágil e responsivo, usando <strong>mouse +
+                                        teclado</strong>.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ========== ABA PROTOCOLO ========== -->
+                    <article class="aba-painel" id="tutorial-protocolo" role="tabpanel" aria-labelledby="tab-protocolo"
+                        tabindex="0">
+                        <div class="protocolo-container">
+
+                            <!-- Cabeçalho -->
+                            <header class="protocolo-header">
+                                <span class="protocolo-icone" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                        <line x1="9" y1="13" x2="15" y2="13" />
+                                        <line x1="9" y1="17" x2="15" y2="17" />
+                                    </svg>
+                                </span>
+                                <h2>Protocolo de Posicionamento S.A.E.R</h2>
+                                <p class="protocolo-subtitulo">Manual de pilotagem e direção</p>
+                            </header>
+
+                            <!-- Introdução -->
+                            <div class="protocolo-intro">
+                                <p>O Manual de Pilotagem e Direção é fundamental para todos os pilotos de helicóptero em
+                                    operações de patrulhamento, garantindo eficiência e precisão em cada ação realizada.
+                                </p>
+                            </div>
+
+                            <!-- Importância -->
+                            <section class="protocolo-importancia" aria-labelledby="importancia-titulo">
+                                <h3 id="importancia-titulo">Importância do Protocolo</h3>
+
+                                <div class="importancia-grid">
+                                    <div class="importancia-card">
+                                        <span class="importancia-icone" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                            </svg>
+                                        </span>
+                                        <div class="importancia-texto">
+                                            <h4>Segurança</h4>
+                                            <p>Define diretrizes claras de posicionamento da aeronave em diferentes
+                                                cenários, protegendo pilotos, tripulação e demais envolvidos.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="importancia-card">
+                                        <span class="importancia-icone" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                                            </svg>
+                                        </span>
+                                        <div class="importancia-texto">
+                                            <h4>Eficiência</h4>
+                                            <p>Permite manobras mais ágeis e seguras, reduzindo riscos e aumentando a
+                                                eficácia das operações.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="importancia-card">
+                                        <span class="importancia-icone" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <polyline points="12 6 12 12 16 14" />
+                                            </svg>
+                                        </span>
+                                        <div class="importancia-texto">
+                                            <h4>Decisão Rápida</h4>
+                                            <p>Em situações dinâmicas, o protocolo orienta o piloto a agir com rapidez e
+                                                assertividade.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="importancia-card">
+                                        <span class="importancia-icone" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                <circle cx="12" cy="12" r="3" />
+                                            </svg>
+                                        </span>
+                                        <div class="importancia-texto">
+                                            <h4>Orientação Visual</h4>
+                                            <p>O uso de esquemas e ilustrações facilita o aprendizado e a correta
+                                                execução durante treinamentos e operações reais.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="importancia-card">
+                                        <span class="importancia-icone" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                                            </svg>
+                                        </span>
+                                        <div class="importancia-texto">
+                                            <h4>Treinamento</h4>
+                                            <p>Serve como base sólida para novos pilotos, padronizando práticas
+                                                recomendadas e preparando-os para missões complexas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Imagens -->
+                            <section class="protocolo-imagens" aria-label="Esquemas visuais do protocolo">
+                                <figure class="imagem-card">
+                                    <figcaption class="imagem-titulo">Esquema de Posicionamento</figcaption>
+                                    <div class="imagem-wrapper">
+                                        <img src="../image/pp1.png"
+                                            alt="Esquema de posicionamento de helicóptero do SAER" loading="lazy">
+                                    </div>
+                                </figure>
+
+                                <figure class="imagem-card">
+                                    <figcaption class="imagem-titulo">Manual de Pilotagem</figcaption>
+                                    <div class="imagem-wrapper">
+                                        <img src="../image/pp2.png" alt="Manual de pilotagem do SAER" loading="lazy">
+                                    </div>
+                                </figure>
+                            </section>
+
+                            <!-- Conclusão -->
+                            <div class="protocolo-conclusao">
+                                <h3>Conclusão</h3>
+                                <p>O Protocolo de Posicionamento S.A.E.R é um instrumento essencial para a aviação
+                                    tática, garantindo operações mais seguras, organizadas e eficazes. Segui-lo é
+                                    preservar vidas e assegurar o sucesso das missões.</p>
+                            </div>
+
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
     </main>
-    
-    <section class="tutoriais-sec">
-        <!-- Navegação das Abas -->
-        <div class="tutoriais-nav">
-            <button class="tutorial-btn ativo" onclick="abrirTutorial('video')">
-                <span class="btn-icone">🎥</span>
-                Percurso de Voo
-            </button>
-            <button class="tutorial-btn" onclick="abrirTutorial('config')">
-                <span class="btn-icone">⚙️</span>
-                Configurações
-            </button>
-            <button class="tutorial-btn" onclick="abrirTutorial('protocolo')">
-                <span class="btn-icone">📋</span>
-                Protocolo de Posicionamento
-            </button>
-        </div>
 
-        <!-- Conteúdo das Abas -->
-        <div class="tutoriais-conteudo">
-            <!-- Aba Vídeo - Percurso de Voo -->
-            <div id="tutorial-video" class="tutorial-painel ativo">
-                <div class="video-pagina">
-                    <div class="tutorial-card video-card-full">
-                        <div class="tutorial-header">
-                            <div class="tutorial-icone">🎥</div>
-                            <h2>Percurso de Voo</h2>
-                            <p class="tutorial-desc">Aprenda o percurso completo de voo do SAER</p>
-                        </div>
-                        <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/2Mly-6RMmwM" 
-                                title="Percurso de Voo SAER" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-                        <div class="video-info">
-                            <p>📌 Assista ao tutorial completo do percurso de voo e aprenda as melhores práticas para pilotar com segurança e eficiência.</p>
-                        </div>
-                    </div>
-
-                    <!-- Dicas Extras -->
-                    <div class="dicas-extras">
-                        <div class="dicas-card">
-                            <h3>💡 Dicas para Pilotos Iniciantes</h3>
-                            <ul>
-                                <li>Pratique o percurso em altura elevada primeiro</li>
-                                <li>Mantenha sempre contato com a torre de controle</li>
-                                <li>Verifique o checklist antes de cada decolagem</li>
-                                <li>Treine pousos de emergência regularmente</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="dicas-card">
-                            <h3>⚠️ Avisos Importantes</h3>
-                            <ul>
-                                <li>Nunca desligue o motor em pleno voo</li>
-                                <li>Respeite o teto máximo de cada aeronave</li>
-                                <li>Mantenha distância segura de outras aeronaves</li>
-                                <li>Em caso de pane, comunique imediatamente</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Aba Configurações -->
-            <div id="tutorial-config" class="tutorial-painel">
-                <div class="config-pagina">
-                    <div class="tutorial-card config-card-full">
-                        <div class="tutorial-header">
-                            <div class="tutorial-icone">⚙️</div>
-                            <h2>Configurações Recomendadas</h2>
-                            <p class="tutorial-desc">Para Pilotos de Helicóptero</p>
-                        </div>
-                        
-                        <div class="config-intro">
-                            <!-- <span class="emoji-saer"></span> -->
-                            <p>A fim de garantir maior controle, precisão e segurança nas operações aéreas, estas são as melhores configurações de teclas para os pilotos utilizarem em suas aeronaves:</p>
-                        </div>
-
-                        <div class="config-lista">
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>L. SHIFT</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Acelerar
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>L. CTRL</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Desacelerar
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>A</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Guinar à esquerda
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>D</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Guinar à direita
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla mouse">
-                                    <kbd>Mouse Esquerdo</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Rolar para a esquerda
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla mouse">
-                                    <kbd>Mouse Direito</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Rolar para a direita
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>W</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Inclinar para frente
-                                </div>
-                            </div>
-
-                            <div class="config-item">
-                                <div class="tecla">
-                                    <kbd>S</kbd>
-                                </div>
-                                <div class="seta">→</div>
-                                <div class="acao">
-                                    <span class="acao-icone">🔹</span>
-                                    Inclinar para trás
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="config-footer">
-                            <p>📍 Essas configurações permitem um voo mais ágil e responsivo, usando <strong>mouse + teclado</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Aba Protocolo de Posicionamento -->
-            <div id="tutorial-protocolo" class="tutorial-painel">
-                <div class="protocolo-container">
-                    <!-- Cabeçalho -->
-                    <div class="protocolo-header">
-                        <h2>📋 Protocolo de Posicionamento S.A.E.R 📋</h2>
-                        <p class="protocolo-subtitulo">Manual de Pilotagem e Direção</p>
-                    </div>
-
-                    <!-- Introdução -->
-                    <div class="protocolo-intro">
-                        <p>O Manual de Pilotagem e Direção é fundamental para todos os pilotos de helicóptero em operações de patrulhamento, garantindo eficiência e precisão em cada ação realizada.</p>
-                    </div>
-
-                    <!-- Importância do Protocolo -->
-                    <div class="protocolo-importancia">
-                        <h3>📍 Importância do Protocolo</h3>
-                        
-                        <div class="importancia-grid">
-                            <div class="importancia-card">
-                                <div class="importancia-icone">🔹</div>
-                                <div class="importancia-texto">
-                                    <h4>Segurança</h4>
-                                    <p>Define diretrizes claras de posicionamento da aeronave em diferentes cenários, protegendo pilotos, tripulação e demais envolvidos.</p>
-                                </div>
-                            </div>
-
-                            <div class="importancia-card">
-                                <div class="importancia-icone">🔹</div>
-                                <div class="importancia-texto">
-                                    <h4>Eficiência</h4>
-                                    <p>Permite manobras mais ágeis e seguras, reduzindo riscos e aumentando a eficácia das operações.</p>
-                                </div>
-                            </div>
-
-                            <div class="importancia-card">
-                                <div class="importancia-icone">🔹</div>
-                                <div class="importancia-texto">
-                                    <h4>Decisão Rápida</h4>
-                                    <p>Em situações dinâmicas, o protocolo orienta o piloto a agir com rapidez e assertividade.</p>
-                                </div>
-                            </div>
-
-                            <div class="importancia-card">
-                                <div class="importancia-icone">🔹</div>
-                                <div class="importancia-texto">
-                                    <h4>Orientação Visual</h4>
-                                    <p>O uso de esquemas e ilustrações facilita o aprendizado e a correta execução durante treinamentos e operações reais.</p>
-                                </div>
-                            </div>
-
-                            <div class="importancia-card">
-                                <div class="importancia-icone">🔹</div>
-                                <div class="importancia-texto">
-                                    <h4>Treinamento</h4>
-                                    <p>Serve como base sólida para novos pilotos, padronizando práticas recomendadas e preparando-os para missões complexas.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Imagens do Protocolo -->
-                    <div class="protocolo-imagens">
-                        <div class="imagem-card">
-                            <div class="imagem-titulo">📐 Esquema de Posicionamento</div>
-                            <div class="imagem-wrapper">
-                                <img src="../image/pp1.png" alt="Esquema de Posicionamento SAER">
-                            </div>
-                        </div>
-                        
-                        <div class="imagem-card">
-                            <div class="imagem-titulo">📊 Manual de Pilotagem</div>
-                            <div class="imagem-wrapper">
-                                <img src="../image/pp2.png" alt="Manual de Pilotagem SAER">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Conclusão -->
-                    <div class="protocolo-conclusao">
-                        <h3>📍 Conclusão</h3>
-                        <p>O Protocolo de Posicionamento S.A.E.R é um instrumento essencial para a aviação tática, garantindo operações mais seguras, organizadas e eficazes. Segui-lo é preservar vidas e assegurar o sucesso das missões.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+    <!-- ==================== FOOTER ==================== -->
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; 2026 SAER - Revoada RJ.</p>
+            <div class="rodape-info">
+                <img src="../image/SaerLogo.png" alt="" width="40" height="40" loading="lazy">
+                <p>Serviço Aeropolicial — PCERJ</p>
+            </div>
+
+            <p class="rodape-copy">&copy; 2026 SAER — Revoada RJ. Todos os direitos reservados.</p>
+
             <div class="redes">
-                <a href="#">Instagram</a>
-                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162" title="Discord">💬 Discord</a>
-                <a href="https://github.com/scotthzx" title="GitHub">🐙 GitHub</a>
+                <a href="#" aria-label="Instagram do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162"
+                    aria-label="Discord do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                    Discord
+                </a>
+                <a href="https://github.com/scotthzx" aria-label="GitHub do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.07v3.07c0 .3.2.65.78.54 4.47-1.5 7.7-5.71 7.7-10.69C23.25 5.48 18.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </footer>
 
-    <script src="../script/app4.js"></script>
 </body>
+
 </html>

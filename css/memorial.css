@@ -1,0 +1,363 @@
+/* ============================================================
+   PÁGINA: MEMORIAL
+   Depende de: base.css
+   ============================================================ */
+
+/* ==================== SEÇÃO ==================== */
+.memorial-sec {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral) var(--espaco-secao);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ==================== INTRODUÇÃO ==================== */
+.memorial-intro {
+    text-align: center;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.memorial-intro-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    color: var(--cor-dourada);
+    margin-bottom: 1.25rem;
+}
+
+.memorial-intro-icone svg {
+    width: 30px;
+    height: 30px;
+}
+
+.memorial-intro p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--cor-texto);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Linha vertical dourada */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            transparent,
+            var(--cor-dourada) 8%,
+            var(--cor-dourada) 92%,
+            transparent);
+    opacity: 0.5;
+}
+
+/* ==================== CARD DE GESTÃO ==================== */
+.gestao {
+    --cor-gestao: var(--cor-dourada);
+
+    position: relative;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+}
+
+.gestao::before {
+    /* Bolinha na linha do tempo */
+    content: '';
+    position: absolute;
+    left: -1.65rem;
+    top: 2rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--cor-gestao);
+    border: 2px solid var(--cor-fundo);
+    box-shadow: 0 0 12px var(--cor-gestao);
+}
+
+.gestao:hover {
+    border-color: var(--cor-gestao);
+    transform: translateX(4px);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--cor-gestao) 20%, transparent);
+}
+
+/* ==================== HEADER DA GESTÃO ==================== */
+.gestao-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    position: relative;
+    background-image: linear-gradient(90deg,
+            color-mix(in srgb, var(--cor-gestao) 20%, transparent),
+            transparent 60%);
+}
+
+.gestao-letra {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    line-height: 1;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--cor-gestao);
+    border-radius: 50%;
+    color: var(--cor-gestao);
+    flex-shrink: 0;
+}
+
+.gestao-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
+    color: var(--cor-texto);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+/* Tag "Atual" */
+.gestao-tag-atual {
+    margin-left: auto;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cor-fundo);
+    background-color: var(--cor-dourada);
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(199, 172, 113, 0.5);
+}
+
+/* ==================== CORPO DA GESTÃO ==================== */
+.gestao-body {
+    list-style: none;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+.comando {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    transition: all var(--transicao);
+}
+
+.comando:hover {
+    border-color: var(--cor-gestao);
+    background-color: color-mix(in srgb, var(--cor-gestao) 10%, rgba(0, 0, 0, 0.3));
+    transform: translateX(4px);
+}
+
+.comando-numero {
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--cor-gestao);
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+    background-color: color-mix(in srgb, var(--cor-gestao) 15%, transparent);
+    border: 1px solid color-mix(in srgb, var(--cor-gestao) 40%, transparent);
+    border-radius: 8px;
+}
+
+.comando-cargos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin: 0;
+}
+
+.cargo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 200px;
+}
+
+.cargo-titulo {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cor-texto-suave);
+    font-weight: 500;
+}
+
+.cargo-nome {
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
+    color: var(--cor-texto);
+    padding: 0.2rem 0.75rem;
+    background-color: color-mix(in srgb, var(--cor-gestao) 10%, transparent);
+    border-left: 3px solid var(--cor-gestao);
+    border-radius: 4px;
+}
+
+/* ==================== CORES POR GESTÃO ==================== */
+.gestao[data-cor="red"] {
+    --cor-gestao: #ff4444;
+}
+
+.gestao[data-cor="orange"] {
+    --cor-gestao: #ff8800;
+}
+
+.gestao[data-cor="gold"] {
+    --cor-gestao: #ffd700;
+}
+
+.gestao[data-cor="green"] {
+    --cor-gestao: #4ade80;
+}
+
+.gestao[data-cor="blue"] {
+    --cor-gestao: #4488ff;
+}
+
+.gestao[data-cor="pink"] {
+    --cor-gestao: #ff44cc;
+}
+
+.gestao[data-cor="cyan"] {
+    --cor-gestao: #00d4ff;
+}
+
+/* ==================== MENSAGEM FINAL ==================== */
+.memorial-footer {
+    text-align: center;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.memorial-footer p {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--cor-dourada);
+    font-style: italic;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memorial-footer-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--cor-dourada);
+    opacity: 0.9;
+}
+
+.memorial-footer-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 700px) {
+    .timeline {
+        padding-left: 0.75rem;
+    }
+
+    .gestao::before {
+        left: -1rem;
+        width: 10px;
+        height: 10px;
+    }
+
+    .gestao-header {
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .gestao-letra {
+        font-size: 1.5rem;
+        width: 44px;
+        height: 44px;
+    }
+
+    .gestao-tag-atual {
+        margin-left: 0;
+        order: 3;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .gestao-body {
+        padding: 1rem 1.25rem;
+    }
+
+    .comando {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 0.85rem;
+    }
+
+    .comando-numero {
+        justify-self: flex-start;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.75rem;
+    }
+
+    .comando-cargos {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .cargo {
+        min-width: auto;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

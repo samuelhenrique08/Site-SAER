@@ -4,512 +4,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAER - Memorial</title>
-    <link rel="stylesheet" href="../style/memorial.css">
-    <link rel="icon" type="image/x-icon" href="../image/SaerLogo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Memorial do SAER - Homenagem aos antigos comandantes do Serviço Aeropolicial da PCERJ.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <meta property="og:title" content="Memorial - SAER">
+    <meta property="og:description" content="Homenagem aos antigos comandantes do Serviço Aeropolicial.">
+    <meta property="og:image" content="../image/SaerLogo.png">
+    <meta property="og:type" content="website">
+
+    <title>Memorial - SAER</title>
+
+    <link rel="icon" type="image/png" href="../image/SaerLogo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/memorial.css">
+
+    <script defer src="../script/app5.js"></script>
 </head>
 
 <body>
-    <header class="header">
-        <a href="../index.html" class="logo">
-            <img src="../image/SaerLogo.png" alt="Logo SAER" class="logo1">
-        </a>
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="helicopteros.html">Helicópteros</a></li>
-                <li><a href="galeria.html">Fotos</a></li>
-                <li><a href="funcoes.html">Funções</a></li>
-                <li><a href="tutoriais.html">Tutoriais</a></li>
-                <li><a href="regras.html">Regras</a></li>
-                <li><a href="memorial.html" class="ativo">Memorial</a></li>
-            </ul>
-        </nav>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo" aria-label="SAER - Página inicial">
+                <img src="../image/SaerLogo.png" alt="" width="48" height="48">
+                <span class="logo-texto">SAER</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+
+            <nav class="nav" aria-label="Menu principal">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="helicopteros.html">Helicópteros</a></li>
+                    <li><a href="galeria.html">Fotos</a></li>
+                    <li><a href="funcoes.html">Funções</a></li>
+                    <li><a href="tutoriais.html">Tutoriais</a></li>
+                    <li><a href="regras.html">Regras</a></li>
+                    <li><a href="memorial.html" class="ativo" aria-current="page">Memorial</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main class="main">
-        <div class="main-content">
-            <h1>Memorial</h1>
-        </div>
+    <main>
+
+        <!-- ==================== TÍTULO ==================== -->
+        <section class="page-header" aria-labelledby="page-titulo">
+            <span class="hero-tag">In Memoriam</span>
+            <h1 id="page-titulo">Memorial</h1>
+            <p>Em honra aos antigos comandantes do Serviço Aeropolicial</p>
+        </section>
+
+        <!-- ==================== CONTEÚDO ==================== -->
+        <section class="memorial-sec" aria-label="Memorial do SAER">
+
+            <!-- Introdução -->
+            <div class="memorial-intro">
+                <span class="memorial-intro-icone" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </span>
+                <p>
+                    Este memorial foi cuidadosamente erguido em tributo a todos os antigos comandantes do Serviço
+                    Aeropolicial, reconhecendo e celebrando o legado de dedicação, coragem e liderança que marcaram
+                    suas trajetórias. Aqui, perpetuamos a memória de seus feitos, garantindo que todo o honroso
+                    trabalho realizado jamais seja esquecido, mas sim lembrado com gratidão e admiração pelas
+                    gerações futuras.
+                </p>
+            </div>
+
+            <!-- Linha do tempo das gestões -->
+            <ol class="timeline" aria-label="Linha do tempo das gestões">
+
+                <!-- ========== GESTÃO ALPHA ========== -->
+                <li class="gestao" data-cor="red">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">α</span>
+                        <h2>Gestão Alpha</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">α.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">L7</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Mike</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">α.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Dede</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Cruz</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">α.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Dede</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Brum</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO BETA ========== -->
+                <li class="gestao" data-cor="orange">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">β</span>
+                        <h2>Gestão Beta</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">β.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Brum</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Japão</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">β.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Bola</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Shelby</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO CHARLIE ========== -->
+                <li class="gestao" data-cor="gold">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">γ</span>
+                        <h2>Gestão Charlie</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">γ.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Bola</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Coruja</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">γ.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Coruja</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Queiroz</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO DELTA ========== -->
+                <li class="gestao" data-cor="green">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">δ</span>
+                        <h2>Gestão Delta</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">δ.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Costa</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Queiroz</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">δ.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Costa</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Coringa</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">δ.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Costa</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Coyote</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">δ.4</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Costa</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Vieira</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO ECHO ========== -->
+                <li class="gestao" data-cor="blue">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">ε</span>
+                        <h2>Gestão Echo</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">ε.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Marcelin</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Queiroz</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ε.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Marcelin</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">WL</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ε.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">WL</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Tomas</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ε.4</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Tomas</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Zako</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ε.5</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Lzin</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Gmz</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO FOXTROT ========== -->
+                <li class="gestao" data-cor="pink">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">ζ</span>
+                        <h2>Gestão Foxtrot</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">ζ.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Lzin</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Gmz</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ζ.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Gmz</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Chicago</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">ζ.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Gmz</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Panda</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO GOLF ========== -->
+                <li class="gestao" data-cor="cyan">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">η</span>
+                        <h2>Gestão Golf</h2>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">η.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Tcharle</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Fantasma</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">η.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Fantasma</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Macedo</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">η.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Macedo</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Silver</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+                <!-- ========== GESTÃO HOTEL (atual) ========== -->
+                <li class="gestao atual" data-cor="gold">
+                    <header class="gestao-header">
+                        <span class="gestao-letra" aria-hidden="true">θ</span>
+                        <h2>Gestão Hotel</h2>
+                        <span class="gestao-tag-atual">Atual</span>
+                    </header>
+                    <dl class="gestao-body">
+                        <div class="comando">
+                            <dt class="comando-numero">θ.1</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Macedo</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Cypher</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">θ.2</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Cypher</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Scott</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">θ.3</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Scott</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Pitoco</span></div>
+                            </dd>
+                        </div>
+                        <div class="comando">
+                            <dt class="comando-numero">θ.4</dt>
+                            <dd class="comando-cargos">
+                                <div class="cargo"><span class="cargo-titulo">Comando</span><span
+                                        class="cargo-nome">Scott</span></div>
+                                <div class="cargo"><span class="cargo-titulo">Sub Comando</span><span
+                                        class="cargo-nome">Carpa</span></div>
+                            </dd>
+                        </div>
+                    </dl>
+                </li>
+
+            </ol>
+
+            <!-- Mensagem final -->
+            <footer class="memorial-footer">
+                <p>"Aqueles que passaram pelo comando deixaram mais que ordens, deixaram um legado de honra e serviço."
+                </p>
+                <span class="memorial-footer-icone" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                        <path d="M4 22h16" />
+                        <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                        <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                        <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                    </svg>
+                </span>
+            </footer>
+
+        </section>
+
     </main>
 
-    <section class="memorial-sec">
-        <!-- Introdução -->
-        <div class="memorial-intro">
-            <div class="intro-icon">🕊️</div>
-            <p>Este memorial foi cuidadosamente erguido em tributo a todos os antigos comandantes do Serviço
-                Aeropolicial, reconhecendo e celebrando o legado de dedicação, coragem e liderança que marcaram suas
-                trajetórias. Aqui, perpetuamos a memória de seus feitos, garantindo que todo o honroso trabalho
-                realizado jamais seja esquecido, mas sim lembrado com gratidão e admiração pelas gerações futuras.</p>
-        </div>
-
-        <!-- Linha do Tempo das Gestões -->
-        <div class="timeline">
-
-            <!-- Gestão Alpha -->
-            <div class="gestao-card">
-                <div class="gestao-header alpha">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">α</span>
-                        <h2>Gestão Alpha</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">α.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">L7</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Mike</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">α.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Dede</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Cruz</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">α.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Dede</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Brum</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Beta -->
-            <div class="gestao-card">
-                <div class="gestao-header beta">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">β</span>
-                        <h2>Gestão Beta</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">β.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Brum</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Japão</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">β.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Bola</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Shelby</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Charlie -->
-            <div class="gestao-card">
-                <div class="gestao-header charlie">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">γ</span>
-                        <h2>Gestão Charlie</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">γ.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Bola</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Coruja</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">γ.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Coruja</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Queiroz</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Delta -->
-            <div class="gestao-card">
-                <div class="gestao-header delta">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">δ</span>
-                        <h2>Gestão Delta</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">δ.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Costa</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Queiroz</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">δ.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Costa</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Coringa</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">δ.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Costa</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Coyote</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">δ.4</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Costa</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Vieira</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Echo -->
-            <div class="gestao-card">
-                <div class="gestao-header echo">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">ε</span>
-                        <h2>Gestão Echo</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">ε.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Marcelin</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Queiroz</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ε.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Marcelin</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">WL</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ε.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">WL</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Tomas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ε.4</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Tomas</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Zako</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ε.5</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Lzin</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Gmz</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Foxtrot -->
-            <div class="gestao-card">
-                <div class="gestao-header foxtrot">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">ζ</span>
-                        <h2>Gestão Foxtrot</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">ζ.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Lzin</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Gmz</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ζ.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Gmz</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Chicago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">ζ.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Gmz</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Panda</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Golf -->
-            <div class="gestao-card">
-                <div class="gestao-header golf">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">η</span>
-                        <h2>Gestão Golf</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">η.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Tcharle</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Fantasma</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">η.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Fantasma</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Macedo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">η.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Macedo</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Silver</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Gestão Hotel -->
-            <div class="gestao-card">
-                <div class="gestao-header hotel">
-                    <div class="gestao-titulo">
-                        <span class="gestao-letra">θ</span>
-                        <h2>Gestão Hotel</h2>
-                    </div>
-                    <div class="gestao-emblema"></div>
-                </div>
-                <div class="gestao-body">
-                    <div class="comando-item">
-                        <div class="comando-numero">θ.1</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Macedo</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Cypher</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">θ.2</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Cypher</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Scott</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">θ.3</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Scott</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Pitoco</span>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="comando-item">
-                        <div class="comando-numero">θ.4</div>
-                        <div class="comando-detalhes">
-                            <div class="cargo">
-                                <span class="cargo-titulo">Comando</span>
-                                <span class="cargo-nome">Scott</span>
-                            </div>
-                            <div class="cargo">
-                                <span class="cargo-titulo">Sub Comando</span>
-                                <span class="cargo-nome">Carpa</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Mensagem Final -->
-                <div class="memorial-footer">
-                    <p>"Aqueles que passaram pelo comando deixaram mais que ordens, deixaram um legado de honra e
-                        serviço."</p>
-                    <span class="footer-icon">🏆</span>
-                </div>
-    </section>
-
+    <!-- ==================== FOOTER ==================== -->
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; 2026 SAER - Revoada RJ.</p>
+            <div class="rodape-info">
+                <img src="../image/SaerLogo.png" alt="" width="40" height="40" loading="lazy">
+                <p>Serviço Aeropolicial — PCERJ</p>
+            </div>
+
+            <p class="rodape-copy">&copy; 2026 SAER — Revoada RJ. Todos os direitos reservados.</p>
+
             <div class="redes">
-                <a href="#">Instagram</a>
-                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162" title="Discord">💬
-                    Discord</a>
-                <a href="https://github.com/scotthzx" title="GitHub">🐙 GitHub</a>
+                <a href="#" aria-label="Instagram do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                    Instagram
+                </a>
+                <a href="https://discord.com/channels/1052430488205283449/1271597439274713162"
+                    aria-label="Discord do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+                    </svg>
+                    Discord
+                </a>
+                <a href="https://github.com/scotthzx" aria-label="GitHub do SAER">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 4.98 3.23 9.2 7.71 10.69.56.1.77-.24.77-.54v-1.9c-3.13.68-3.79-1.5-3.79-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.7 10.7 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.07v3.07c0 .3.2.65.78.54 4.47-1.5 7.7-5.71 7.7-10.69C23.25 5.48 18.27.5 12 .5z" />
+                    </svg>
+                    GitHub
+                </a>
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>

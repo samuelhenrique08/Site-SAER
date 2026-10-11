@@ -1,0 +1,344 @@
+/* ============================================================
+   PÁGINA: GALERIA
+   Depende de: base.css
+   ============================================================ */
+
+/* ==================== VISUALIZADOR ==================== */
+.galeria-sec {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral) var(--espaco-secao);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.galeria-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* ---------- Botões de navegação ---------- */
+.nav-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    color: var(--cor-dourada);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transicao);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    flex-shrink: 0;
+}
+
+.nav-btn svg {
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+}
+
+.nav-btn:hover {
+    background-color: var(--cor-dourada);
+    color: var(--cor-fundo);
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(199, 172, 113, 0.5);
+}
+
+.nav-btn:active {
+    transform: scale(0.96);
+}
+
+/* ---------- Foto principal ---------- */
+.foto-display {
+    margin: 0;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-grande);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color var(--transicao), box-shadow var(--transicao);
+    width: 100%;
+}
+
+.foto-display:hover {
+    border-color: var(--cor-dourada);
+    box-shadow: 0 10px 30px rgba(199, 172, 113, 0.15);
+}
+
+.foto-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background: none;
+    border: none;
+    cursor: zoom-in;
+}
+
+.foto-principal {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: opacity 0.35s ease, transform var(--transicao);
+    will-change: opacity;
+}
+
+.foto-wrapper:hover .foto-principal {
+    transform: scale(1.01);
+}
+
+.foto-principal.fade {
+    opacity: 0;
+}
+
+.foto-legenda {
+    padding: 0.85rem 1.25rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    border-top: 1px solid var(--cor-borda);
+    background-color: rgba(0, 0, 0, 0.25);
+    min-height: 40px;
+}
+
+.foto-legenda:empty {
+    display: none;
+}
+
+/* ---------- Contador + bolinhas ---------- */
+.galeria-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.contador {
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+    color: var(--cor-dourada);
+    letter-spacing: 2px;
+}
+
+.paginacao-bolinhas {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.bolinha {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(199, 172, 113, 0.25);
+    border: 1px solid var(--cor-dourada);
+    cursor: pointer;
+    transition: all var(--transicao);
+    padding: 0;
+}
+
+.bolinha:hover {
+    background-color: rgba(199, 172, 113, 0.7);
+    transform: scale(1.15);
+}
+
+.bolinha.ativa {
+    background-color: var(--cor-dourada);
+    box-shadow: 0 0 10px var(--cor-dourada);
+    transform: scale(1.2);
+}
+
+/* ==================== MINIATURAS ==================== */
+.miniaturas-wrapper {
+    width: 100%;
+}
+
+.miniaturas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.miniatura {
+    aspect-ratio: 4 / 3;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transicao);
+    opacity: 0.55;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 0;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.miniatura:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    border-color: var(--cor-dourada);
+}
+
+.miniatura.ativa {
+    border-color: var(--cor-dourada);
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(199, 172, 113, 0.6);
+    transform: scale(1.03);
+}
+
+/* ==================== LIGHTBOX ==================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.25s ease;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--raio);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-fechar {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--cor-dourada);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--cor-dourada);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transicao);
+    z-index: 1;
+}
+
+.lightbox-fechar:hover {
+    background-color: var(--cor-dourada);
+    color: var(--cor-fundo);
+}
+
+.lightbox-fechar svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        position: relative;
+    }
+
+    /* Botões viram "overlay" em cima da foto, nos cantos */
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        z-index: 2;
+    }
+
+    .nav-btn:active {
+        transform: translateY(-50%) scale(0.96);
+    }
+
+    .nav-btn:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    .nav-btn[data-direcao="-1"] {
+        left: 0.5rem;
+    }
+
+    .nav-btn[data-direcao="1"] {
+        right: 0.5rem;
+    }
+
+    .foto-wrapper {
+        padding: 0.75rem;
+        aspect-ratio: 4 / 3;
+    }
+
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .lightbox {
+        padding: 1rem;
+    }
+
+    .lightbox-fechar {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .miniaturas {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 0.4rem;
+    }
+
+    .contador {
+        font-size: 1.15rem;
+    }
+
+    .bolinha {
+        width: 8px;
+        height: 8px;
+    }
+}

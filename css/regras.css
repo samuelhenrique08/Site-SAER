@@ -1,0 +1,381 @@
+/* ============================================================
+   PÁGINA: REGRAS
+   Depende de: base.css
+   ============================================================ */
+
+/* ==================== SEÇÃO ==================== */
+.regras-sec {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 var(--espaco-lateral) var(--espaco-secao);
+}
+
+/* ==================== NAVEGAÇÃO DE ABAS ==================== */
+.abas-container {
+    width: 100%;
+}
+
+.abas-navegacao {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--cor-borda);
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-dourada) transparent;
+    -ms-overflow-style: none;
+}
+
+.abas-navegacao::-webkit-scrollbar {
+    height: 4px;
+}
+
+.abas-navegacao::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 172, 113, 0.4);
+    border-radius: 4px;
+}
+
+.aba-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.25rem;
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--cor-texto-suave);
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transicao);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.aba-btn:hover {
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+}
+
+.aba-btn.ativo {
+    color: var(--cor-dourada);
+    background-color: var(--cor-dourada-transp);
+    border-color: var(--cor-dourada);
+    box-shadow: 0 0 15px rgba(199, 172, 113, 0.2);
+}
+
+.aba-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.aba-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== PAINÉIS ==================== */
+.abas-conteudo {
+    position: relative;
+}
+
+.aba-painel {
+    display: none;
+}
+
+.aba-painel.ativo {
+    display: block;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== HEADER DA SEÇÃO ==================== */
+.regras-header {
+    text-align: center;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 2rem;
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio-grande);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.regras-header.admin {
+    background-color: linear-gradient(160deg, var(--cor-fundo-card), rgba(199, 172, 113, 0.08));
+    background-color: rgba(199, 172, 113, 0.06);
+}
+
+.regras-header-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: var(--cor-dourada-transp);
+    border: 1px solid var(--cor-dourada);
+    color: var(--cor-dourada);
+    margin-bottom: 1rem;
+}
+
+.regras-header-icone svg {
+    width: 24px;
+    height: 24px;
+}
+
+.regras-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--cor-dourada);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.regras-header p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
+
+/* ==================== LISTA DE ARTIGOS ==================== */
+.artigos-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.artigo {
+    --cor-tipo: var(--cor-dourada);
+    /* padrão */
+    --bg-tipo: var(--cor-dourada-transp);
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.25rem;
+    align-items: start;
+    padding: 1.25rem;
+    background-color: rgba(41, 41, 41, 0.4);
+    background-image: linear-gradient(90deg, var(--bg-tipo), rgba(41, 41, 41, 0.3) 40%);
+    border: 1px solid var(--cor-borda);
+    border-left: 4px solid var(--cor-tipo);
+    border-radius: var(--raio);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+
+.artigo:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--cor-tipo);
+}
+
+/* ---------- Número do artigo ---------- */
+.artigo-numero {
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    color: var(--cor-tipo);
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--cor-tipo);
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* ---------- Conteúdo ---------- */
+.artigo-conteudo p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+/* ==================== TIPOS DE ARTIGO ==================== */
+.artigo[data-tipo~="destaque"] {
+    --cor-tipo: #ffd700;
+    --bg-tipo: rgba(255, 215, 0, 0.08);
+}
+
+.artigo[data-tipo~="proibido"] {
+    --cor-tipo: #ff4444;
+    --bg-tipo: rgba(255, 68, 68, 0.08);
+}
+
+.artigo[data-tipo~="obrigatorio"] {
+    --cor-tipo: #4ade80;
+    --bg-tipo: rgba(74, 222, 128, 0.08);
+}
+
+.artigo[data-tipo~="prioridade"] {
+    --cor-tipo: #ff8800;
+    --bg-tipo: rgba(255, 136, 0, 0.08);
+}
+
+.artigo[data-tipo~="elite"] {
+    --cor-tipo: #c7ac71;
+    --bg-tipo: rgba(199, 172, 113, 0.15);
+}
+
+.artigo[data-tipo~="meta"] {
+    --cor-tipo: #00bfff;
+    --bg-tipo: rgba(0, 191, 255, 0.08);
+}
+
+.artigo[data-tipo~="abordagem"] {
+    --cor-tipo: #ff69b4;
+    --bg-tipo: rgba(255, 105, 180, 0.08);
+}
+
+.artigo[data-tipo~="admin"] {
+    --cor-tipo: var(--cor-dourada);
+    --bg-tipo: rgba(199, 172, 113, 0.08);
+}
+
+/* Quando combina admin + outro (ex: admin obrigatorio) */
+.artigo[data-tipo~="admin"][data-tipo~="obrigatorio"] {
+    --cor-tipo: #4ade80;
+    --bg-tipo: linear-gradient(90deg, rgba(199, 172, 113, 0.08), rgba(74, 222, 128, 0.08));
+}
+
+.artigo[data-tipo~="admin"][data-tipo~="elite"] {
+    --cor-tipo: var(--cor-dourada);
+    --bg-tipo: rgba(199, 172, 113, 0.15);
+}
+
+/* ==================== DESTAQUES DE TEXTO ==================== */
+.destaque-texto {
+    color: var(--cor-dourada);
+    font-weight: 600;
+    background-color: rgba(199, 172, 113, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.excecao {
+    color: #ffa500;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.horario {
+    color: var(--cor-dourada);
+    font-weight: 700;
+}
+
+/* ==================== MENSAGEM DE RÁDIO (Art. 19) ==================== */
+.mensagem-radio {
+    position: relative;
+    margin: 1.25rem 0 0;
+    padding: 1.5rem 1.25rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--cor-dourada);
+    border-radius: var(--raio);
+    font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+}
+
+.mensagem-radio::before {
+    content: 'Mensagem 190';
+    position: absolute;
+    top: -12px;
+    left: 1.25rem;
+    padding: 0 0.6rem;
+    background-color: var(--cor-fundo);
+    color: var(--cor-dourada);
+    font-family: var(--fonte-titulo);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.mensagem-radio p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--cor-texto);
+}
+
+.mensagem-radio strong {
+    color: var(--cor-dourada);
+}
+
+.variavel {
+    display: inline-block;
+    padding: 1px 8px;
+    font-family: inherit;
+    font-size: 0.85em;
+    color: #ffa500;
+    background-color: rgba(255, 165, 0, 0.12);
+    border: 1px dashed rgba(255, 165, 0, 0.5);
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 700px) {
+    .abas-navegacao {
+        gap: 0.35rem;
+        padding-bottom: 0.75rem;
+        mask-image: linear-gradient(to right, transparent, #000 8px, #000 calc(100% - 8px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, #000 8px, #000 calc(100% - 8px), transparent);
+    }
+
+    .aba-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .aba-icone {
+        width: 16px;
+        height: 16px;
+    }
+
+    .artigo {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .artigo-numero {
+        display: inline-block;
+        align-self: flex-start;
+        font-size: 0.95rem;
+        padding: 0.4rem 0.85rem;
+    }
+
+    .artigo-conteudo p {
+        font-size: 0.9rem;
+    }
+
+    .mensagem-radio {
+        padding: 1.25rem 1rem 1rem;
+    }
+
+    .mensagem-radio p {
+        font-size: 0.8rem;
+    }
+
+    .destaque-texto {
+        white-space: normal;
+    }
+}
